@@ -7,6 +7,51 @@ nc
 
 deepmd5hash
 
+Hash Suite Free (6 chars maximum)
+import from local accounts
+ntlm
+add a word list that we think might be the password (aka word lists and dicts)
+word list ->add then choose the rules (lower or upper case add year or month and a into @ etc) and max and min size
+
+Cain and Able
+microsoft
+sniffs network and cracks, caches and keys, recover wireless network keys
+oxid.it/cain.html
+may get a firewall warning, mostly for the networking things
+network sniffing, arp poisoning, password cracking, mitm
+sniff
+configure network, sniffer choose device, start sniffer (in the icons), blue plus icon 
+all hosts and let it scan MAC addresses, under the sniffer tab you can remove any of the MAC it found. Can resolve them via right click to resolve hostnames.
+ARP poisoning
+click the nuclear yellow icon to start arp posining
+firewall will complain
+move to cracker tab to start cracking passwords
+choose from the side the password type, here NTLM
+plus to add hashes from file or from the local system via checkbox
+can use the custom wordlist, first choose the hased you want to crack in the cells by highlighting them and right clicking
+choose ntlm wordlist (can also choose many more like, brute force, rainbow, etc) 
+choose to add workdlist for the dict attack, can choose extra options (aka rules) case, adding things, l33t etc. start and wait in that popup.
+will add the password to the main screen when done. Can keep using different dicts in that popup.
+Then use brute force when done with the dict, as it takes longer to run so don't do it on everyone of them.
+USING Cain and Able
+
+
+
+
+
+John the Ripper
+On a windows machine, the hash files work best when they are in the same john RUN folder.
+cmd in the desktop folder, cd into secrets (remember that DIR is used instead of ls, with cd .. and cd and use tab completion)
+Copy Windows.txt C:Users/Administrator/Desktop/Secrets C:Users/Administrator/Desktop/Tools/John179\run
+change into the john run folder and run the app with \john179\run
+then tell it we want to use the file with: john Windows/txt
+it will tell you how many it loaded in and some stats on the hashes.
+then start guesses, it can take time (in this case let it run for at least 5 minutes)
+To crack this particular type of information, John will look at the password.lst file located in the john179 directory and compare the hash values in the dump file (in our case, the Windows.txt file) with the calculated hash values for the words contained in the password file. If there’s a match then John the Ripper will list the passwords it finds at the command line. If, after attempting to do a quick hash comparison on all the accounts, if there are any uncracked passwords John the Ripper will then roll into another form of attack to crack the passwords.
+CTRL C can stop the tool
+
+
+
 -----------
 Nmap
 Metasploit

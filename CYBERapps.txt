@@ -1,0 +1,15 @@
+wireshark
+https://www.wireshark.org/
+
+tcpdump
+
+nc
+
+deepmd5hash
+
+-----------
+Nmap
+Metasploit
+Entersoft Apps
+Websecurify
+Aircrack-ng

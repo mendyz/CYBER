@@ -53,7 +53,35 @@ it will tell you how many it loaded in and some stats on the hashes.
 then start guesses, it can take time (in this case let it run for at least 5 minutes)
 To crack this particular type of information, John will look at the password.lst file located in the john179 directory and compare the hash values in the dump file (in our case, the Windows.txt file) with the calculated hash values for the words contained in the password file. If there’s a match then John the Ripper will list the passwords it finds at the command line. If, after attempting to do a quick hash comparison on all the accounts, if there are any uncracked passwords John the Ripper will then roll into another form of attack to crack the passwords.
 CTRL C can stop the tool
+LINUX
+Prep Tool Module for Cracking
+To get started on cracking the zip file you have to first use the zip2john script to grab the hash of the password used, and then put that hash into a separate file (in the case below the file will be secret.hash). To do this, open a terminal and enter the following command:
+./zip2john Secret.zip > secret.hash
+List the first five characters in the hash value (after pkzip2$):
+to see them run nano secret.hash
 
+Now ue john to crack using a word list
+./john secret.hash –wordlist=password.lst
+show the passwords with ./john -show secret.hash
+use unzip with the filename to unzip this one and use the cracked password
+eog imagefilename.jpg to open image files
+libreoffice filenames.docx to open the document files and pdf files use "" for any names with spaces in them.
+use cp to copy files over, when pulling multiple files use a space between files then the destination folder after all of them. Can use tab auto completion on the file names. destination start with /home/student/then the folder names
+create the hash ./office2john.py Premiere.xlsx > premiere.hash
+now use john to crack it
+./john premiere.hash –wordlist=password.lst
+to show the passwords use ./john -show premier.hash
+
+order is mostly 
+find the zip sor files that need passwords or encryption passwords for the files
+move them into john run folder
+create the hash by running ./office2john.py FILE.EXTENSION > FILE.HASH
+use john to show the hashes and other info on the programs and details ./john -show FILENAME
+then use john to crack them with ./john FILENAME.hash –wordlist=password.lst
+use that to open the files
+
+
+ 
 
 
 -----------
